@@ -102,6 +102,7 @@ export class AuthWorker extends WorkerEntrypoint {
 		const session = await this.env.AUTH_SESSIONS.get(oauthId);
 		if (!session) return { auth: false, session: false };
 		const user = await this.env.AUTH_USERS.get(session, 'json');
+		console.log(user, properties);
 		if (properties && !evaluateQuery(user, properties)) return { auth: false, session: true };
 		return { auth: true, session: true, data: user };
 	}
