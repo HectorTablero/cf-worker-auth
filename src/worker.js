@@ -123,9 +123,7 @@ export default {
 					response.headers.set(
 						'Location',
 						login
-							? `https://workers.tablerus.es/auth/login` + customRedirectUrl
-								? '?redirect=' + encodeURIComponent(customRedirectUrl)
-								: ''
+							? 'https://workers.tablerus.es/auth/login' + (customRedirectUrl ? '?redirect=' + encodeURIComponent(customRedirectUrl) : '')
 							: customRedirectUrl
 					);
 				return response;
