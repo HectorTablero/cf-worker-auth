@@ -21,7 +21,7 @@ function setCookie(name, value, maxAge = 3600) {
 }
 
 function removeCookie(name) {
-	return `${name}=; Path=/; HttpOnly; Max-Age=0; SameSite=Lax`;
+	return `${name}=; Path=/; Domain=tablerus.es; HttpOnly; Secure; Max-Age=0; SameSite=None`;
 }
 
 export default {
